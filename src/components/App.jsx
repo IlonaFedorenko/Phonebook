@@ -1,40 +1,32 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { fetchContacts } from '../redux/contactsOperations';
+// import { lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-import { useSelector } from 'react-redux';
-import { selectorContscts } from '../redux/selectors';
-import { selectorIsLoading } from '../redux/selectors';
-import { selectorError } from '../redux/selectors';
+import { Layout } from '../components/Layout/Layout';
 
-import { ContactForm } from './ContactForm/ContactForm';
-import { Filter } from './Filter/Filter';
-import { ContactList } from './ContactList/ContactList';
-import { Section } from './Section/Section';
+// import { PrivateRoute } from '../routes/PrivateRoute';
+// import { RestrictedRoute } from '../routes/RestrictedRoute';
+
+// const Home = lazy(() => import('../pages/Home/Home'));
+// const Register = lazy(() => import('../pages/Register/Register'));
+// const Login = lazy(() => import('../pages/Login/Login'));
+// const Contacts = lazy(() => import('../pages/PhoneBook/PhoneBook'));
+import { Home } from '../pages/Home/Home';
+import { Register } from '../pages/Register/Register';
+import { Login } from '../pages/Login/Login';
 
 export const App = () => {
-  const contacts = useSelector(selectorContscts);
-  const error = useSelector(selectorError);
-  const isLoading = useSelector(selectorIsLoading);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-
   return (
-    <>
-      <Section title="Phonebook">
-        <ContactForm />
-      </Section>
-      <Section title="Contacts">
-        <Filter />
-        {isLoading && !error && <b>Request in progress...</b>}
-        {error && error}
-        <ContactList />
-        {contacts.length > 0 && <ContactList />}
-      </Section>
-    </>
+    <Routes>
+      <Route path="/goit-react-hw-08-phonebook/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route
+          path="/goit-react-hw-08-phonebook/register"
+          element={<Register />}
+        />
+        <Route path="/goit-react-hw-08-phonebook/login" element={<Login />} />
+        {/* <Route path="/contacts" element={<Contacts />} /> */}
+      </Route>
+    </Routes>
   );
 };
