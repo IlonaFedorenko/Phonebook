@@ -13,7 +13,7 @@ import { Filter } from '../../components/Filter/Filter';
 import { ContactList } from '../../components/ContactList/ContactList';
 import { Section } from '../../components/Section/Section';
 
-export const App = () => {
+export const Contacts = () => {
   const contacts = useSelector(selectorContscts);
   const error = useSelector(selectorError);
   const isLoading = useSelector(selectorIsLoading);

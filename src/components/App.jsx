@@ -14,6 +14,7 @@ import { Layout } from '../components/Layout/Layout';
 import { Home } from '../pages/Home/Home';
 import { Register } from '../pages/Register/Register';
 import { Login } from '../pages/Login/Login';
+import { Contacts } from '../pages/PhoneBook/PhoneBook';
 
 export const App = () => {
   return (
@@ -25,7 +26,10 @@ export const App = () => {
           element={<Register />}
         />
         <Route path="/goit-react-hw-08-phonebook/login" element={<Login />} />
-        {/* <Route path="/contacts" element={<Contacts />} /> */}
+        <Route
+          path="/goit-react-hw-08-phonebook/contacts"
+          element={<Contacts />}
+        />
       </Route>
     </Routes>
   );
