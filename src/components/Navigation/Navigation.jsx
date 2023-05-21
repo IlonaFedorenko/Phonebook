@@ -8,12 +8,10 @@ export const Navigation = () => {
 
   return (
     <nav className={css.nav}>
-      <NavLink className={css.link} to="/goit-react-hw-08-phonebook/">
+      <NavLink className={css.link} to="/">
         Home
       </NavLink>
-      {isLoggedIn && (
-        <NavLink to="/goit-react-hw-08-phonebook/phonebook">Phonebook</NavLink>
-      )}
+      {isLoggedIn && <NavLink to="/contacts">Phonebook</NavLink>}
     </nav>
   );
 };

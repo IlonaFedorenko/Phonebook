@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/authOperations';
 import css from './Register.module.css';
 
-export function Register() {
+const Register = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -41,10 +41,12 @@ export function Register() {
         <button className={css.btn} type="submit">
           SIGN UP
         </button>
-        <a className={css.link} href="#">
+        {/* <a className={css.link} href="#">
           Already have an account? Sign In
-        </a>
+        </a> */}
       </div>
     </form>
   );
-}
+};
+
+export default Register;

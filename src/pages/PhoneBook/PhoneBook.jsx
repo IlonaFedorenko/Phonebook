@@ -13,7 +13,7 @@ import { Filter } from '../../components/Filter/Filter';
 import { ContactList } from '../../components/ContactList/ContactList';
 import { Section } from '../../components/Section/Section';
 
-export const Contacts = () => {
+const Contacts = () => {
   const contacts = useSelector(selectorContscts);
   const error = useSelector(selectorError);
   const isLoading = useSelector(selectorIsLoading);
@@ -38,3 +38,5 @@ export const Contacts = () => {
     </>
   );
 };
+
+export default Contacts;

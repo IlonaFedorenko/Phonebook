@@ -1,36 +1,56 @@
-import React from 'react';
-// import { lazy } from 'react';
+import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import { Layout } from '../components/Layout/Layout';
+import { refreshUser } from '../redux/auth/authOperations';
+import { useAuth } from '../components/hooks/useAuth';
 
-// import { PrivateRoute } from '../routes/PrivateRoute';
-// import { RestrictedRoute } from '../routes/RestrictedRoute';
+import { PrivateRoute } from '../routes/PrivateRoute';
+import { RestrictedRoute } from '../routes/RestrictedRoute';
 
-// const Home = lazy(() => import('../pages/Home/Home'));
-// const Register = lazy(() => import('../pages/Register/Register'));
-// const Login = lazy(() => import('../pages/Login/Login'));
-// const Contacts = lazy(() => import('../pages/PhoneBook/PhoneBook'));
-import { Home } from '../pages/Home/Home';
-import { Register } from '../pages/Register/Register';
-import { Login } from '../pages/Login/Login';
-import { Contacts } from '../pages/PhoneBook/PhoneBook';
+import { lazy } from 'react';
+const Home = lazy(() => import('../pages/Home/Home'));
+const Register = lazy(() => import('../pages/Register/Register'));
+const Login = lazy(() => import('../pages/Login/Login'));
+const Contacts = lazy(() => import('../pages/PhoneBook/PhoneBook'));
 
 export const App = () => {
+  const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
   return (
-    <Routes>
-      <Route path="/goit-react-hw-08-phonebook/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route
-          path="/goit-react-hw-08-phonebook/register"
-          element={<Register />}
-        />
-        <Route path="/goit-react-hw-08-phonebook/login" element={<Login />} />
-        <Route
-          path="/goit-react-hw-08-phonebook/contacts"
-          element={<Contacts />}
-        />
-      </Route>
-    </Routes>
+    !isRefreshing && (
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route
+            path="/register"
+            element={
+              <RestrictedRoute
+                redirectTo="/Contacts"
+                component={<Register />}
+              />
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <RestrictedRoute redirectTo="/Contacts" component={<Login />} />
+            }
+          />
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute redirectTo="/login" component={<Contacts />} />
+            }
+          />
+        </Route>
+      </Routes>
+    )
   );
 };

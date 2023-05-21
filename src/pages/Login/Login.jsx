@@ -1,16 +1,15 @@
 import { useDispatch } from 'react-redux';
-import { register } from '../../redux/auth/authOperations';
+import { logIn } from '../../redux/auth/authOperations';
 import css from './Login.module.css';
 
-export function Login() {
+const Login = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
     dispatch(
-      register({
-        name: form.elements.name.value,
+      logIn({
         email: form.elements.email.value,
         password: form.elements.password.value,
       })
@@ -37,10 +36,12 @@ export function Login() {
         <button className={css.btn} type="submit">
           SIGN IN
         </button>
-        <a className={css.link} href="#">
+        {/* <a className={css.link} href="#">
           Don't have an account? Sign Up
-        </a>
+        </a> */}
       </div>
     </form>
   );
-}
+};
+
+export default Login;
