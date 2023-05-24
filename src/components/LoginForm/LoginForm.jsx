@@ -37,11 +37,9 @@ export const LoginForm = () => {
         <button className={css.btn} type="submit">
           SIGN IN
         </button>
-        <a className={css.link}>
-          <NavLink className={css.link} to="/register">
-            Don't have an account? Sign Up
-          </NavLink>
-        </a>
+        <NavLink className={css.link} to="/register">
+          Don't have an account? Sign Up
+        </NavLink>
       </div>
     </form>
   );

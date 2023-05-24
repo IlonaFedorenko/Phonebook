@@ -42,11 +42,9 @@ export const RegisterForm = () => {
         <button className={css.btn} type="submit">
           SIGN UP
         </button>
-        <a className={css.link}>
-          <NavLink className={css.link} to="/login">
-            Already have an account? Sign In{' '}
-          </NavLink>
-        </a>
+        <NavLink className={css.link} to="/login">
+          Already have an account? Sign In{' '}
+        </NavLink>
       </div>
     </form>
   );
