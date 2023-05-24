@@ -1,0 +1,25 @@
+.button {
+  width: 110px;
+  height: 45px;
+  background-color: #f7d373;
+  padding: 10px;
+  border-radius: 25px;
+  color: #fff;
+  text-transform: uppercase;
+  border-color: #f7d373;
+  cursor: pointer;
+}
+.button:focus,
+.button:hover {
+  border-color: #aaaaaa;
+  background-color: #aaaaaa;
+  color: #fff;
+}
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text {
+  margin-right: 20px;
+}
