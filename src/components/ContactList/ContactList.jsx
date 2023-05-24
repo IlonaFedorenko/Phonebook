@@ -11,13 +11,14 @@ export function ContactList() {
   const handleDeleteContact = id => {
     dispatch(deleteContact(id));
   };
+  console.log(filterContacts);
 
   return (
     <ul className={css.list}>
-      {filterContacts.map(({ id, name, phone }) => (
+      {filterContacts.map(({ id, name, number }) => (
         <li className={css.item} key={id}>
           <p>
-            {name}:{phone}
+            {name}:{number}
           </p>
           <button
             className={css.button}
@@ -38,7 +39,7 @@ ContactList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      phone: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
     })
   ),
 };

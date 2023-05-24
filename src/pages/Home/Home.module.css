@@ -1,3 +1,48 @@
 .home {
- 
+  color: white;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.text {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item {
+  margin-top: 50px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.linkitem {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 120px;
+  height: 30px;
+  background-color: #f7d373;
+  border-color: inherit;
+  border-radius: 25px;
+  padding: 12px;
+  text-transform: uppercase;
+  margin-top: 16px;
+  cursor: pointer;
+  margin-left: 30px;
+  text-decoration: none;
+}
+.link {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.linkitem:focus,
+.linkitem:hover {
+  background-color: white;
+  color: #f7d373;
 }

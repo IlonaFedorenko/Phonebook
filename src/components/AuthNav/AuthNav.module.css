@@ -10,3 +10,7 @@
   color: #aaaaaa;
   text-decoration: none;
 }
+.link:hover,
+.link:focus {
+  color: #f7d373;
+}

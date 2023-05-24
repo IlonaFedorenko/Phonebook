@@ -29,6 +29,10 @@
   color: #aaaaaa;
   font-size: 14px;
 }
+.link:focus,
+.link:hover {
+  color: #f7d373;
+}
 
 .input {
   border-color: #f7d373;
@@ -60,4 +64,9 @@ input:hover {
   text-transform: uppercase;
   margin-top: 16px;
   cursor: pointer;
+}
+.btn:focus,
+.btn:hover {
+  background-color: #aaaaaa;
+  color: #fff;
 }
