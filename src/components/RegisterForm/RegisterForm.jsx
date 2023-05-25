@@ -24,11 +24,27 @@ export const RegisterForm = () => {
       <div className={css.formContainer}>
         <label className={css.label}>
           Username
-          <input className={css.input} type="text" name="name" />
+          <input
+            className={css.input}
+            type="text"
+            name="name"
+            minLength="2"
+            title="Please, write your name and surname"
+            aria-label="name"
+            required
+          />
         </label>
         <label className={css.label}>
           Email
-          <input className={css.input} type="email" name="email" />
+          <input
+            className={css.input}
+            type="email"
+            name="email"
+            pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+            title="Please, write your email"
+            aria-label="email"
+            required
+          />
         </label>
         <label className={css.label}>
           Password
@@ -37,13 +53,16 @@ export const RegisterForm = () => {
             type="password"
             name="password"
             autoComplete="off"
+            minLength="7"
+            title="The password length must be not less thn 7"
+            required
           />
         </label>
         <button className={css.btn} type="submit">
           SIGN UP
         </button>
         <NavLink className={css.link} to="/login">
-          Already have an account? Sign In{' '}
+          Already have an account? Sign In
         </NavLink>
       </div>
     </form>

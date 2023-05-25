@@ -50,6 +50,7 @@ export const App = () => {
             }
           />
         </Route>
+        <Route path="*" element={<Home />} />
       </Routes>
     )
   );

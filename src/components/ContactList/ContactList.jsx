@@ -11,7 +11,6 @@ export function ContactList() {
   const handleDeleteContact = id => {
     dispatch(deleteContact(id));
   };
-  console.log(filterContacts);
 
   return (
     <ul className={css.list}>

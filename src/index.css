@@ -27,3 +27,7 @@ html {
   width: auto;
   height: 800px;
 }
+
+a.active {
+  color: #f7d373;
+}

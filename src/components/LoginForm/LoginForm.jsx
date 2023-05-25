@@ -23,7 +23,15 @@ export const LoginForm = () => {
       <div className={css.formContainer}>
         <label className={css.label}>
           Email
-          <input className={css.input} type="email" name="email" />
+          <input
+            className={css.input}
+            type="email"
+            name="email"
+            pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+            title="Please, write your email"
+            aria-label="email"
+            required
+          />
         </label>
         <label className={css.label}>
           Password
@@ -32,6 +40,9 @@ export const LoginForm = () => {
             type="password"
             name="password"
             autoComplete="off"
+            minLength="7"
+            title="The password length must be not less thn 7"
+            required
           />
         </label>
         <button className={css.btn} type="submit">
