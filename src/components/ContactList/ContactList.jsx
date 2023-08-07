@@ -25,10 +25,11 @@ export function ContactList() {
             onClick={() => handleDeleteContact(id)}
             value="delete"
           >
-            Delete contact
+            DELETE CONTACT
           </button>
         </li>
       ))}
+      
     </ul>
   );
 }
