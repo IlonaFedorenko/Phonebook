@@ -1,5 +1,5 @@
 .form {
-  width: 350px;
+  max-width: 350px;
   min-height: 220px;
   background-color: #fff;
   box-shadow: 25px 25px 25px -32px rgba(31, 38, 135, 0.7);
@@ -13,7 +13,6 @@
 .formContainer {
   display: grid;
   justify-content: center;
-
   align-items: center;
 }
 
@@ -69,4 +68,10 @@ input:hover {
 .btn:hover {
   background-color: #aaaaaa;
   color: #fff;
+}
+
+@media screen and (max-width: 350px) {
+  .input {
+    width: 230px;
+  }
 }

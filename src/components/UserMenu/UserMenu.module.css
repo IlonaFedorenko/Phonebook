@@ -26,3 +26,9 @@
   color: #4a4a4a;
   font-weight: 500;
 }
+
+@media screen and (max-width: 600px) {
+  .text {
+    margin: 10px;
+  }
+}

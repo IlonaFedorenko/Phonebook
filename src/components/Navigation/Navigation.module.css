@@ -10,6 +10,13 @@
   text-decoration: none;
 }
 .link:hover,
-.link:focus{
-color: #f7d373;
+.link:focus {
+  color: #f7d373;
+}
+
+@media screen and (max-width: 600px) {
+  .nav {
+    display: flex;
+    justify-content: center;
+  }
 }

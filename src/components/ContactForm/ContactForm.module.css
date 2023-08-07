@@ -45,3 +45,9 @@ input:hover {
   margin-left: auto;
   margin-right: auto;
 }
+
+@media screen and (max-width: 350px) {
+  .input {
+    width: 230px;
+  }
+}

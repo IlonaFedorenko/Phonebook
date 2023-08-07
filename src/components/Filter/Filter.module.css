@@ -24,4 +24,8 @@ input:hover {
   outline: none;
 }
 
-
+@media screen and (max-width: 350px) {
+  .input {
+    width: 230px;
+  }
+}
