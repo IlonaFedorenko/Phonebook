@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
+  min-height: 70px;
   padding: 0 40px;
   box-shadow: 0px 25px 25px -32px rgba(31, 38, 135, 0.7);
   background-color: rgb(255, 255, 255);
@@ -16,8 +16,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .header {
+  .notFlex {
     display: block;
-    height: 120px;
   }
 }

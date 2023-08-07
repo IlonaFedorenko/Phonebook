@@ -31,4 +31,7 @@
   .text {
     margin: 10px;
   }
+  .block {
+    padding: 10px;
+  }
 }
